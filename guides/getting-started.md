@@ -4,7 +4,6 @@ this document describes how to set up a Pender development environment and deplo
 ##requirements 
 - [the Android SDK](http://developer.android.com/sdk/index.html)
 - android tools installed on your path
-- python
 - eclipse
 only if your into that sort of thing
 
@@ -13,7 +12,7 @@ only if your into that sort of thing
 
 1. run
 
-    python create.py
+    ./pendertools -p /path/to/put/pender/project
 
 from the tools directory of the pender repo
 
