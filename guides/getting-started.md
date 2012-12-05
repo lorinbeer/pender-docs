@@ -5,6 +5,7 @@ this document describes how to set up a Pender development environment and deplo
 - [the Android SDK](http://developer.android.com/sdk/index.html)
 - android tools installed on your path
 - python
+- eclipse
 
 ## Quickstart
 ###Python Script
@@ -40,6 +41,33 @@ manually setting up a Pender project
 
 ### Command Line
 
+1. create an empty android project
+
+    android create project -n <ProjectName> -t <TargetID> -p <ProjectPath> -k <com.your.package> -a PenderActivity
+
+replace the arguments with the appropriate values for your project
+* <ProjectName>: name of your android project, eg PenderClient
+* <TargetID>: Android OS target, type "android list target" to see a list of targets available on your system
+* <com.your.package>: unique identifier for your app, reverse domain name style
+* PenderActivity: java class name for the main activity, currently must be PenderActivity. You can rename it by altering the class name, file name, and the manifest.xml if desired
+
+2. copy the pender source
+    cp -r Pener-Android/src/ project/path/
+
+3. download the pender library dependencies, [hosted on github](https://github.com/downloads/lorinbeer/pender-android/rhino1_7R2.jar)
+
+move to the /libs folder of your android project
+
 ### Ecipse
 
+1. Create a new project
+Eclipse->File->New->Other->Android->Project From Existing Source
+
+2. Navigate to the pender source
+and click finish
+
+3. download the pender library dependencies, [hosted on github](https://github.com/downloads/lorinbeer/pender-android/rhino1_7R2.jar)
+add it to the /libs folder of your project
+
+4. Add the rhino jar to the eclipse project build path
 
