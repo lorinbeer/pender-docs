@@ -6,6 +6,7 @@ this document describes how to set up a Pender development environment and deplo
 - android tools installed on your path
 - python
 - eclipse
+only if your into that sort of thing
 
 ## Quickstart
 ###Python Script
@@ -70,4 +71,6 @@ and click finish
 add it to the /libs folder of your project
 
 4. Add the rhino jar to the eclipse project build path
-
+- right click anywhere inside your project in the project manager
+- choose build path->configure build path->libraries->add jars
+- add the rhino jar file in the /libs folder of your project
