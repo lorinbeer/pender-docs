@@ -12,7 +12,7 @@ only if your into that sort of thing
 
 1. run
 
-    ./pendertools -p /path/to/put/pender/project
+    ./ptool -p /path/to/put/pender/project
 
 from the tools directory of the pender repo
 
