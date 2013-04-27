@@ -71,4 +71,68 @@ where:
 * "<package>" = com.pender.example or whatever you want to call your example
 * "<activityid>" = name of the main activity of the example, let's go with "PenderExample" without the quotes
 
+### 2. update the example project so it references the library
+
+    android update project --path <path> --library <libloc>
+
+"<path>" is path to your project
+"<libloc>" is path to your library
+
+assuming you've made both in the same toplevel directory as the repo, the command would be:
+
+android update project --path ./PenderExample --library ./PenderAndroidLibrary
+
+for project called PenderExample
+
+### 3. copy over the assets directory to the client project
+
+    cp -r pender-android/assets ./PenderExample/assets
+
+for project called PenderExample
+
+### 4. Provide a min-sdk-version
+in order to function properly, add a minimum sdk version specification to the AndroidManifest.xml
+
+    <uses-sdk android:minSdkVersion="8" />
+
+### 5. Call the Pender Library from the main activity class of the Pender Example project 
+look in PenderExample/src and follow the directory tree down to the activity
+
+open up the activity located in PenderExample/src/com/pender/example/exampleactivity.java
+
+replace everything under the package statement with:
+
+    import android.app.Activity;
+    import android.os.Bundle;
+
+    import com.pender.Pender;
+
+    public class PenderActivity extends Activity
+    {
+        /** Called when the activity is first created. */
+        @Override
+        public void onCreate(Bundle savedInstanceState)
+        {
+            super.onCreate(savedInstanceState);
+            mPender = new Pender(this);
+            mPender.init();
+        }
+
+        private Pender mPender;    
+    }
+
+### 6. Build and Install
+
+    ant debug
+
+or
+
+    ant release
+
+and install on a device or simulator
+
+    adb install bin/blah.apk
+
+where blah.apk will be something like PenderExample-debug.apk
+
 
